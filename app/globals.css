@@ -1,0 +1,86 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "leaflet/dist/leaflet.css";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  padding-top: 60px;
+  padding-left: 30px;
+
+}
+
+.text_icon {
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.lote {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* globals.css */
+
+/* Style the container */
+#selectLoteContainer {
+  border-radius: 20px;
+  padding: 5px;       /* for some internal spacing */
+}
+
+/* Optionally style the label or select inside that container */
+#selectLoteContainer label.lote-label {
+  padding-left: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+#selectLoteContainer select {
+  /* e.g. round corners, custom border, etc. */
+  border-radius: 13px;
+
+  padding: 5px;
+
+  margin-left: 5px ;
+  color: black;
+}
+
+.select {
+  padding-right: px; /* or whatever spacing you prefer */
+}
+
+#logo {
+  padding-top: 40px;
+
+}
