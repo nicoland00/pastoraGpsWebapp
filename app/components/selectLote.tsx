@@ -1,4 +1,3 @@
-// selectLote.tsx
 "use client";
 
 import React from "react";
@@ -13,17 +12,15 @@ export default function SelectLote() {
 
   return (
     <div id="selectLoteContainer">
-      <label htmlFor="loteSelect" className="lote-label">
-        Lote:
-      </label>
+      <label htmlFor="loteSelect" className="mr-2 font-semibold">Lote:</label>
       <select
         id="loteSelect"
         value={selectedLote}
         onChange={handleChange}
+        className="px-2 py-1 rounded-[10px] text-black"
       >
-        <option value="All">Todos</option>
-        <option value="Lote San Sebastian">San Sebastian</option>
-        <option value="Lote Cayo Arena">Cayo Arena</option>
+        {/* Only one option: the ranch name provided */}
+        <option value="Lote San Sebastian">Lote San Sebastian</option>
       </select>
     </div>
   );

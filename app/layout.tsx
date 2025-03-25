@@ -1,24 +1,24 @@
-import { Metadata } from "next";
+// app/layout.tsx
 import "./globals.css";
+import type { Metadata } from "next";
+import React from "react";
 import { LoteProvider } from "@/context/contextLote";
-import OverlayLayout from "./components/overlayLayout";
+import OverlayLayout from "@/app/components/overlayLayout";
 
 export const metadata: Metadata = {
-  title: "Pastora",
-  description: "Full-screen map with overlays",
+  title: "Pastora App",
+  description: "Ixorigue integration with side nav & map/stats pages",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className="h-screen w-screen overflow-hidden">
         <LoteProvider>
-          {/* OverlayLayout places the hamburger, sidebar, and select-lote box over the page */}
-          <OverlayLayout>{children}</OverlayLayout>
+          {/* OverlayLayout includes the side navbar + map on home route */}
+          <OverlayLayout>
+            {children}
+          </OverlayLayout>
         </LoteProvider>
       </body>
     </html>
