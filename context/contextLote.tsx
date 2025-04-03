@@ -1,4 +1,4 @@
-// context/contextLote.tsx
+// app/context/contextLote.tsx
 "use client";
 
 import React, { createContext, useContext, useState } from "react";
@@ -11,7 +11,7 @@ type LoteContextType = {
 const LoteContext = createContext<LoteContextType | undefined>(undefined);
 
 export function LoteProvider({ children }: { children: React.ReactNode }) {
-  const [selectedLote, setSelectedLote] = useState("All");
+  const [selectedLote, setSelectedLote] = useState("");
   return (
     <LoteContext.Provider value={{ selectedLote, setSelectedLote }}>
       {children}

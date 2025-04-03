@@ -1,3 +1,4 @@
+// app/api/animals/[ranchId]/route.ts
 import { NextResponse } from "next/server";
 
 export const dynamic = "force-dynamic";
@@ -6,6 +7,10 @@ export async function GET(
   request: Request,
   { params }: { params: { ranchId: string } }
 ) {
+  // Espera (resolve) el objeto params
+  const resolvedParams = await Promise.resolve(params);
+  const { ranchId } = resolvedParams;
+
   const token = process.env.IXORIGUE_TOKEN;
   const baseUrl = process.env.IXORIGUE_API_URL || "https://api.ixorigue.com";
 
@@ -13,8 +18,7 @@ export async function GET(
     return NextResponse.json({ error: "No token set" }, { status: 500 });
   }
 
-  // Llamada real: /api/Animals/[ranchId]
-  const res = await fetch(`${baseUrl}/api/Animals/${params.ranchId}`, {
+  const res = await fetch(`${baseUrl}/api/Animals/${ranchId}`, {
     headers: { Authorization: `Bearer ${token}` },
   });
 
