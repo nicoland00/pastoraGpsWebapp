@@ -85,7 +85,6 @@ export default function MapComponent({ sidebarOpen }: MapProps) {
   // Si el usuario aún no ha seleccionado un ranchId (o lote), no se ejecuta el fetch.
   useEffect(() => {
     if (!selectedLote || selectedLote === "All") {
-      console.error("No se ha seleccionado un rancho (ranchId).");
       return;
     }
     // A) Fetch de ranchos para obtener la ubicación central del mapa

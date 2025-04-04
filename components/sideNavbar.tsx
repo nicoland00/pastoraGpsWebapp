@@ -15,7 +15,7 @@ export default function SideNavbar({ open, onClose, isStats = false }: SideNavba
     <div
       className={`
         absolute top-0 left-0 bottom-0
-        transform transition-transform duration-300 z-[9997]
+        transform transition-transform duration-300 z-[9996]
         pointer-events-none
         ${open ? "translate-x-0" : "-translate-x-full"}
       `}

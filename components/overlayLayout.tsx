@@ -5,7 +5,6 @@ import dynamic from "next/dynamic";
 import SideNavbar from "./sideNavbar";
 import SelectLote from "./selectLote";
 
-
 interface OverlayLayoutProps {
   children: React.ReactNode;
 }
@@ -24,7 +23,7 @@ export default function OverlayLayout({ children }: OverlayLayoutProps) {
   const loteLeft = sidebarOpen ? "left-[285px]" : "left-[90px]";
   const loteBgClass = isStats ? "bg-white" : "bg-white/75";
 
-  // Mostrar el mapa solo en la home
+  // Mostrar el mapa y el selector solo en la home
   const isHome = pathname === "/";
 
   return (
@@ -59,17 +58,19 @@ export default function OverlayLayout({ children }: OverlayLayoutProps) {
           <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
-      {/* Selector de lote, posicionado dinámicamente */}
-      <div
-        className={`
-          absolute top-[15px] z-50
-          ${loteBgClass} rounded-[20px] p-3
-          transition-all duration-300
-          ${loteLeft}
-        `}
-      >
-        <SelectLote />
-      </div>
+      {/* Selector de lote, solo se muestra en la home y cuando el sidebar está cerrado */}
+      {isHome && !sidebarOpen && (
+        <div
+          className={`
+            absolute top-[15px] z-50
+            ${loteBgClass} rounded-[20px] p-3
+            transition-all duration-300
+            ${loteLeft}
+          `}
+        >
+          <SelectLote />
+        </div>
+      )}
       {/* SideNavbar overlay */}
       <SideNavbar open={sidebarOpen} onClose={() => setSidebarOpen(false)} isStats={isStats} />
     </div>
