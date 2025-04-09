@@ -3,13 +3,8 @@ import { NextResponse } from "next/server";
 
 export const dynamic = "force-dynamic";
 
-export async function GET(
-  request: Request,
-  { params }: { params: { ranchId: string } }
-) {
-  // Espera (resolve) el objeto params
-  const resolvedParams = await Promise.resolve(params);
-  const { ranchId } = resolvedParams;
+export async function GET(request: Request, { params }: any) {
+  const { ranchId } = params;
 
   const token = process.env.IXORIGUE_TOKEN;
   const baseUrl = process.env.IXORIGUE_API_URL || "https://api.ixorigue.com";

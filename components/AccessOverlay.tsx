@@ -67,15 +67,15 @@ export default function AccessOverlay() {
     <div
       className="fixed inset-0 z-[200] flex flex-col items-center justify-center"
       style={{
-        backgroundColor: "rgba(0,50,0,0.7)", // Verde oscuro con opacidad 0.7
+        backgroundColor: "rgba(255, 255, 255, 0.95)", 
         backdropFilter: "blur(6px)",
       }}
     >
       {/* Navbar: Título Pastora */}
       <div className="absolute top-22 w-full text-center">
-        <h1 className="text-5xl font-bold text-white">Pastora</h1>
-        <h3 className="text-center text-xl mb-6 text-white pt-4">
-          Tracking Webapp
+        <h1 className="text-5xl font-bold text-black">Welcome to Pastora&apos;s Tracking Webapp</h1>
+        <h3 className="text-center text-xl mb-6 text-black pt-4">
+          Track your animals health, position and weight in real time!
         </h3>
       </div>
 
