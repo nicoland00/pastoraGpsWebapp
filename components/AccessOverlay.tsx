@@ -72,15 +72,15 @@ export default function AccessOverlay() {
       }}
     >
       {/* Navbar: Título Pastora */}
-      <div className="absolute top-22 w-full text-center">
-        <h1 className="text-5xl font-bold text-black">Welcome to Pastora&apos;s Tracking Webapp</h1>
+      <div className=" top-22 w-full text-center pt-12">
+        <h1 className="text-3xl font-bold text-black">Welcome to Pastora&apos;s Tracking Webapp</h1>
         <h3 className="text-center text-xl mb-6 text-black pt-4">
           Track your animals health, position and weight in real time!
         </h3>
       </div>
 
       {/* Cuadro blanco central */}
-      <div className="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-xl flex flex-col items-center mt-20">
+      <div className="bg-white rounded-2xl shadow-2xl p-8 w-11/12 max-w-xl flex flex-col items-center">
         {/* Imagen/GIF placeholder (más grande) */}
         <div className="mb-6">
           <Image
@@ -94,14 +94,14 @@ export default function AccessOverlay() {
 
         {/* Textos dentro del cuadro */}
         <p className="text-center text-2xl font-semibold mb-4 text-black">
-          Link the wallet that contains your claimed NFT
+          Link the wallet with your claimed NFT
         </p>
 
         {/* Botón Verify */}
         <button
           onClick={handleVerify}
           disabled={isVerifying}
-          className="bg-black text-white font-semibold px-8 py-4 rounded-lg hover:bg-green-700 transition-colors disabled:opacity-70 w-full max-w-xs"
+          className="bg-black text-white font-semibold px-8 py-4 rounded-lg hover:bg-green-700 transition-colors disabled:opacity-70 w-11/12 max-w-xs"
         >
           {isVerifying ? "Verifying..." : "Verify"}
         </button>
