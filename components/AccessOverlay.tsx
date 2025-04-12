@@ -82,7 +82,7 @@ export default function AccessOverlay() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="mb-8 text-3xl md:text-5xl font-extrabold text-center text-black"
+        className="mb-8 text-3xl md:pt-16 md:text-5xl font-extrabold text-center text-black"
       >
         Welcome to Pastora&apos;s Tracking Webapp
       </motion.h1>
@@ -117,7 +117,7 @@ export default function AccessOverlay() {
         {/* Central Content */}
         <div className="flex flex-col items-center justify-flexstart flex-grow">
           {/* Image Container for responsive image behavior (shorter height) */}
-          <div className="relative w-full h-[180px] mb-6">
+          <div className="relative w-full md:h-[360px] h-[180px] mb-6">
             <Image
               src="/cows.gif"
               alt="Cows GIF"
